@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const apiUrl = import.meta.env.VITE_API_URL || '/api';
+const apiUrl = 'https://page-pulse-98rl.onrender.com';
 
 export const auditWebsite = async (url) => {
   try {
-    const response = await axios.post(`${apiUrl}/audit`, { url });
+    const response = await axios.post(`${apiUrl}/api/audit`, { url });
     return response.data;
   } catch (error) {
     const message = error.response?.data?.message || 'Unable to audit the website.';
